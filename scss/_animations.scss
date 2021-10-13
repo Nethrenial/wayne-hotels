@@ -1,0 +1,25 @@
+@keyframes fromLeft {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-10rem);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fromRight {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(10rem);
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+}

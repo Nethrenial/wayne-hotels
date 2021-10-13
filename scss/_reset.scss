@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $color-primary;
+  border-radius: 50rem;
+  height: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: darken($color: $color-5, $amount: 20%);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 58.5%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  html {
+    font-size: 56%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  html {
+    font-size: 54%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  html {
+    font-size: 52%;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media screen and (max-width: 200px) {
+  html {
+    font-size: 45%;
+  }
+}
+
+body {
+  font-family: $font-secondary;
+  overflow-x: hidden;
+  line-height: 1.5;
+  color: #333;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}

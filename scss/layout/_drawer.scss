@@ -1,0 +1,183 @@
+.drawer {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 8rem;
+  background-color: $color-primary;
+  overflow-x: hidden;
+  padding-top: 2rem;
+  transition: all 0.3s ease-out;
+
+  .close {
+    display: none;
+  }
+
+  nav {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    ul {
+      li {
+        padding: 1rem;
+        transition: all 0.5s ease-out;
+        margin-bottom: 1rem;
+        display: inline-block;
+        width: 100%;
+
+        a {
+          font-size: 4rem;
+          font-weight: bold;
+          font-family: $font-secondary;
+          transition: color 0.2s ease-out;
+
+          &:visited,
+          &:link {
+            color: #fff;
+          }
+
+          &:hover {
+            color: $color-5;
+
+            &::before {
+              content: "-=>";
+              color: $color-5;
+              position: absolute;
+              left: -5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.active {
+    width: 25vw;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .drawer {
+    left: 0;
+    height: 100vh;
+    width: 0;
+    top: 0;
+
+    .close {
+      display: block;
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      transform: translate(-50%, -50%);
+      width: 3rem;
+      height: 3rem;
+      color: #fff;
+      background-color: transparent;
+      outline: none;
+      border: none;
+      font-size: 8rem;
+    }
+
+    nav {
+      top: 30%;
+      ul {
+        align-items: center;
+        li {
+          text-align: center;
+          margin-bottom: 2rem;
+          padding: 0.8rem;
+        }
+      }
+    }
+
+    &.active {
+      top: 0;
+      height: 100vh;
+      width: 100vw;
+    }
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .drawer {
+    &.active {
+      width: 60vw;
+    }
+    .close {
+      display: block;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 2rem;
+      right: 2rem;
+      width: 3rem;
+      height: 3rem;
+      color: #fff;
+      background-color: transparent;
+      outline: none;
+      border: none;
+      font-size: 8rem;
+    }
+    nav {
+      top: 20%;
+      ul {
+        li {
+          margin-bottom: 1.8rem;
+          padding: 0.7rem;
+          a {
+            font-size: 3rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-height: 500px) {
+  .drawer {
+    nav {
+      ul {
+        li {
+          margin-bottom: 1.6rem;
+          padding: 0.6rem;
+          a {
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-height: 300px) {
+  .drawer {
+    nav {
+      ul {
+        li {
+          margin-bottom: 1.2rem;
+          padding: 0.5rem;
+          a {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-height: 250px) {
+  .drawer {
+    nav {
+      ul {
+        li {
+          margin-bottom: 1.2rem;
+          padding: 0.5rem;
+          a {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}

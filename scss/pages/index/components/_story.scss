@@ -1,0 +1,72 @@
+.stories {
+  padding: 5rem 1rem;
+  background-color: $color-5;
+  grid-column: full-start / full-end;
+  @include d-flex-centered;
+  &-headings {
+    h2 {
+      font-family: $font-primary;
+      color: $color-primary;
+      font-size: 5rem;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    h3 {
+      font-family: $font-secondary;
+      color: #fff;
+      font-size: 3rem;
+      text-align: center;
+    }
+  }
+
+  .story {
+    margin: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    &:nth-child(odd) {
+      flex-direction: row-reverse;
+    }
+
+    &-picture {
+      img {
+        width: 128px;
+        height: 128px;
+        border: 0.5rem solid $color-primary;
+        border-radius: 50%;
+      }
+    }
+
+    &-text {
+      h3 {
+        font-size: 2.5rem;
+        font-family: $font-primary;
+        text-align: center;
+      }
+      p {
+        font-size: 2rem;
+        max-width: 60ch;
+        color: #fff;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .stories {
+    grid-row: 3 / span 1;
+    .story {
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+
+      &:nth-child(odd) {
+        flex-direction: column;
+      }
+    }
+  }
+}

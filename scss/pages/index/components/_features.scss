@@ -1,0 +1,88 @@
+.features {
+  padding: 8rem 1rem;
+  grid-column: center-start / center-end;
+
+  .feature-headings {
+    h2 {
+      font-family: $font-primary;
+      color: $color-5;
+      font-size: 5rem;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    h3 {
+      margin-top: 2rem;
+      font-family: $font-secondary;
+      color: #333;
+      font-size: 3rem;
+      text-align: center;
+    }
+  }
+
+  .feature-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
+
+    .feature {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+
+      &-image {
+        width: 20rem;
+        height: 20rem;
+      }
+
+      h2 {
+        text-align: center;
+        font-size: 3rem;
+        font-family: $font-primary;
+        color: $color-4;
+
+        margin-bottom: 2rem;
+      }
+
+      &-description {
+        max-width: 60ch;
+        text-align: center;
+        font-size: 2rem;
+      }
+
+      &-link {
+        font-size: 2.5rem;
+        &:visited,
+        &:link {
+          color: $color-5;
+        }
+        &:hover {
+          color: darken($color: $color-5, $amount: 10%);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .features {
+    grid-row: 2 / span 1;
+    grid-column: full-start / full-end;
+    .feature-container {
+      .feature {
+        padding: 2rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .features {
+    .feature-container {
+      grid-template-columns: 1fr;
+      .feature {
+        padding: 1rem;
+      }
+    }
+  }
+}

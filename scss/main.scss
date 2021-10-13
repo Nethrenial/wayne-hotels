@@ -1,0 +1,73 @@
+// Importing Base Styles //
+
+@import "./variables";
+@import "./mixins";
+@import "./functions";
+@import "./utilities";
+@import "./reset";
+@import "./animations";
+
+// Importing Layout Styles //
+
+@import "./layout/sidebar";
+@import "./layout/footer";
+@import "./layout/drawer";
+
+// Importing Page Styles //
+
+@import "./pages/index/index";
+@import "./pages/hotels/hotels";
+@import "./pages/restaurants/restaurants";
+@import "./pages/about/about";
+@import "./pages/contact/contact";
+
+.index-container {
+  display: grid;
+  grid-template-columns:
+    [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr)
+    [center-start] repeat(8, [col-start] minmax(min-content, 140px) [col-end])
+    [center-end]
+    minmax(6rem, 1fr) [full-end];
+  grid-template-rows: 100vh repeat(6, min-content);
+}
+
+@media screen and (max-width: 1024px) {
+  .index-container {
+    grid-template-columns: [full-start] 1fr [full-end];
+    grid-template-rows: 100vh repeat(6, min-content);
+  }
+}
+
+.scroll-box {
+  transition: all 1s linear;
+  visibility: hidden;
+  // will-change: transform, opacity, visibility;
+  will-change: transform;
+  backface-visibility: hidden;
+
+  &:nth-child(odd) {
+    &.show {
+      animation: fromLeft 1s ease-out forwards;
+    }
+  }
+
+  &:nth-child(even) {
+    &.show {
+      animation: fromRight 1s ease-out forwards;
+    }
+  }
+}
+
+// @media screen and (min-width: 2400px) {
+//   .index-container {
+//     grid-template-columns:
+//       [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr)
+//       [center-start] repeat(8, [col-start] minmax(min-content, 190px) [col-end])
+//       [center-end]
+//       minmax(6rem, 1fr) [full-end];
+//   }
+
+//   html {
+//     font-size: 90%;
+//   }
+// }
